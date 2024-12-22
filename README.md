@@ -10,7 +10,7 @@
 ## How To Use This
 *soon.*
 ## Resources
-- [Wurst-Plus-Three](https://github.com/WurstPlus/wurst-plus-three) original WurstPlusThree repo*
+- [Wurst-Plus-Three](https://github.com/WurstPlus/wurst-plus-three) *original WurstPlusThree repo*
 - [AsteraCore](https://github.com/TeamAstera/AsteraCore) *for extra event system*
 - [Fabric Developers](https://fabricmc.net/develop/) *for fabric 1.20.4 source code*
 - [Fabric Resources](https://docs.fabricmc.net/) *for fabric docs*
