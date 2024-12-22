@@ -18,3 +18,5 @@
 - [WurstPlusThree Showcase](https://youtu.be/PMEWznMMC2Q?si=b8xLLhmf2QQb5SVd)
 - [AsteraClient Discord](https://discord.gg/NYjDPvay3z)
 - [AsteraClient Youtube](https://www.youtube.com/@asteraclientdevelopment)
+
+**Note:** *This is a work in progress and is not yet ready for use.*
