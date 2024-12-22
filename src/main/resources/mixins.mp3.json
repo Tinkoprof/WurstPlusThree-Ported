@@ -1,0 +1,12 @@
+{
+	"required": true,
+	"package": "net.tinkoproff.ported.mixin",
+	"compatibilityLevel": "JAVA_17",
+	"mixins": [
+		"ExampleMixin",
+		"TitleScreenMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}

@@ -1,0 +1,26 @@
+{
+	"schemaVersion": 1,
+	"id": "wp3",
+	"version": "1.0.0",
+	"name": "WurstPlusThree-ported",
+	"description": "Ported version of W+3 mod by Tinkoprof",
+	"authors": ["Tinkoprof"],
+	"contact": {},
+	"license": "MIT",
+	"environment": "*",
+	"entrypoints": {
+	  "main": [
+		"net.tinkoproff.ported.WurstPlus"
+	  ]
+	},
+	"mixins": {
+	  "client": [
+		"wp3.mixin.TitleScreenMixin"
+	  ]
+	},
+	"depends": {
+	  "fabricloader": ">=0.14.0",
+	  "minecraft": "1.20.4"
+	}
+  }
+  
