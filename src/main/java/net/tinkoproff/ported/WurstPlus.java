@@ -5,6 +5,11 @@ import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * @author Tinkoprof
+ * @since 22/12/2024
+ */
+
 public class WurstPlus implements ModInitializer {
 	public static final String MOD_ID = "wp3"
 	public static final String LOG_NAME = "WurstPlusThree-ported"
