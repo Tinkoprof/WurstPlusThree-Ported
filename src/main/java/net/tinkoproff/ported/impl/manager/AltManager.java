@@ -7,7 +7,7 @@ import com.mojang.authlib.Agent;
 import com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService;
 import com.mojang.authlib.yggdrasil.YggdrasilUserAuthentication;
 import net.tinkoproff.ported.WurstPlus;
-import net.tinkoproff.ported.util.elements.Alt;
+import net.tinkoproff.ported.impl.util.elements.Alt;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.session.Session;
 
