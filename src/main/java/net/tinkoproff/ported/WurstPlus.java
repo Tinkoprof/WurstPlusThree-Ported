@@ -11,8 +11,8 @@ import org.slf4j.LoggerFactory;
  */
 
 public class WurstPlus implements ModInitializer {
-	public static final String MOD_ID = "wp3"
-	public static final String LOG_NAME = "WurstPlusThree-ported"
+	public static final String MOD_ID = "wp3";
+	public static final String LOG_NAME = "WurstPlusThree-ported";
 	
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
