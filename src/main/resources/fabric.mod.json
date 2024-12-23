@@ -1,27 +1,28 @@
 {
 	"schemaVersion": 1,
-	"id": "wp3",
-	"version": "1.0.0",
-	"name": "WurstPlusThree-ported",
-	"description": "Ported version of W+3 cpvp utility by Tinkoprof",
+	"id": "ported",
+	"version": "${version}",
+	"name": "WurstPlus3 Ported",
+	"description": "WurstPlus3 ported to newer versions",
 	"authors": [
 	"Tinkoprof (porter)",
 	"TravisF (original author)"
     ],
 	"contact": {},
 	"license": "MIT",
-	"environment": "*",
+	"environment": "client",
 	"entrypoints": {
-	  "main": [
+	  "client": [
 		"net.tinkoproff.ported.WurstPlus"
 	  ]
 	},
 	"mixins": [
-	  "wp3.mixins.json"
+	  	"ported.mixins.json"
 	],
 	"depends": {
-	  "fabricloader": ">=0.14.0",
-	  "minecraft": "1.20.4"
+	  "fabricloader": ">=${loader_version}",
+	  "fabric": "*",
+	  "minecraft": "${minecraft_version}"
 	}
   }
   
