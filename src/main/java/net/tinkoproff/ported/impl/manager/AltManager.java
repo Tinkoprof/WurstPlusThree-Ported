@@ -71,25 +71,19 @@ public class AltManager {
         }
     }
 
-    public boolean loginCracked(String alt) {
+    public void loginCracked(String username) {
         Session session = new Session(
-            alt,
-            alt,
-            "",
-            Optional.of("mojang"),
-            Optional.empty(),
-            AccountType.LEGACY
+            username,                   // username
+            username,                   // uuid
+            "",                        // accessToken
+            Optional.of("mojang"),     // xuid
+            Optional.empty(),          // clientId
+            AccountType.LEGACY         // accountType
         );
-        try {
-            setSession(session);
-            WurstPlus.LOGGER.info("Logged in as " + alt);
-            return true;
-        } catch (Exception e) {
-            return false;
-        }
+        setSession(session);
     }
 
-    public boolean loginMojang(String email, String password) {
+    public void loginMojang(String email, String password) {
         try {
             URL url = new URL("https://authserver.mojang.com/authenticate");
             // ... auth işlemleri ...
@@ -99,20 +93,20 @@ public class AltManager {
             ).getAsJsonObject();
 
             String token = resultObject.get("accessToken").getAsString();
+            String mcname = resultObject.get("mcname").getAsString();
+            String uuid = resultObject.get("uuid").getAsString();
             
             Session session = new Session(
-                resultObject.get("mcname").getAsString(),  // username
-                resultObject.get("uuid").getAsString(),    // uuid
-                token,                                     // accessToken
-                Optional.of("mojang"),                     // xuid
-                Optional.empty(),                          // clientId
-                AccountType.MOJANG                         // accountType
+                mcname,                     // username
+                uuid,                      // uuid
+                token,                     // accessToken
+                Optional.of("mojang"),     // xuid
+                Optional.empty(),          // clientId
+                AccountType.MOJANG         // accountType
             );
             setSession(session);
-            return true;
         } catch (Exception e) {
             e.printStackTrace();
-            return false;
         }
     }
 
