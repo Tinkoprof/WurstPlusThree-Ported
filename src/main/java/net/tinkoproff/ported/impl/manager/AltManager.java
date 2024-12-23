@@ -10,6 +10,7 @@ import net.tinkoproff.ported.WurstPlus;
 import net.tinkoproff.ported.impl.util.elements.Alt;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.util.Session;
+import net.minecraft.client.util.Session.AccountType;
 
 import javax.net.ssl.HttpsURLConnection;
 import java.io.BufferedReader;
@@ -20,6 +21,7 @@ import java.net.Proxy;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.Optional;
 
 /**
  * @ported by Tinkoprof
@@ -70,19 +72,46 @@ public class AltManager {
     }
 
     public boolean loginCracked(String alt) {
-        Session crackedSession = new Session(
+        Session session = new Session(
             alt,
             alt,
-            "0",
-            "legacy",
-            null,
-            null
+            "",
+            Optional.of("mojang"),
+            Optional.empty(),
+            AccountType.LEGACY
         );
         try {
-            setSession(crackedSession);
+            setSession(session);
             WurstPlus.LOGGER.info("Logged in as " + alt);
             return true;
         } catch (Exception e) {
+            return false;
+        }
+    }
+
+    public boolean loginMojang(String email, String password) {
+        try {
+            URL url = new URL("https://authserver.mojang.com/authenticate");
+            // ... auth işlemleri ...
+
+            JsonObject resultObject = JsonParser.parseReader(
+                new BufferedReader(new InputStreamReader(url.openStream()))
+            ).getAsJsonObject();
+
+            String token = resultObject.get("accessToken").getAsString();
+            
+            Session session = new Session(
+                resultObject.get("mcname").getAsString(),  // username
+                resultObject.get("uuid").getAsString(),    // uuid
+                token,                                     // accessToken
+                Optional.of("mojang"),                     // xuid
+                Optional.empty(),                          // clientId
+                AccountType.MOJANG                         // accountType
+            );
+            setSession(session);
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
             return false;
         }
     }
