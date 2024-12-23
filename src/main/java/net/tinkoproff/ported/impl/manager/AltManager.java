@@ -31,9 +31,10 @@ public class AltManager {
 
     ArrayList<Alt> alts;
     String altApi = "https://auth.mcleaks.net/v1/";
-    MinecraftClient mc = MinecraftClient.getInstance();
+    private final MinecraftClient mc;
 
     public AltManager() {
+        this.mc = MinecraftClient.getInstance();
         alts = new ArrayList<>();
     }
 

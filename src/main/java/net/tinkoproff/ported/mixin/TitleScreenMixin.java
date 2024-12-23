@@ -1,30 +1,23 @@
 package net.tinkoproff.ported.mixin;
 
-import net.tinkoproff.ported.WurstPlus;
-
-import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.gui.DrawContext;
+import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.screen.TitleScreen;
-import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.text.Text;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 @Mixin(TitleScreen.class)
-public class TitleScreenMixin {
+public class TitleScreenMixin extends Screen {
+    
+    protected TitleScreenMixin(Text title) {
+        super(title);
+    }
 
     @Inject(method = "render", at = @At("TAIL"))
-    private void renderCustomText(MatrixStack matrices, int mouseX, int mouseY, float delta, CallbackInfo info) {
-        LOGGER.info("Rendering custom text on title screen");
-        MinecraftClient.getInstance().textRenderer.drawWithShadow(
-            matrices,
-            "W+3 - ported by Tinkoprof",
-            10,
-            10,
-            0xFFFFFF
-        );
+    private void renderCustomText(DrawContext context, int mouseX, int mouseY, float delta, CallbackInfo info) {
+        context.drawTextWithShadow(this.textRenderer, "W+3 - ported by Tinkoprof", 10, 10, 0xFFFFFF);
     }
 }
