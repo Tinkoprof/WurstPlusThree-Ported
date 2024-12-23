@@ -16,11 +16,9 @@
 		"net.tinkoproff.ported.WurstPlus"
 	  ]
 	},
-	"mixins": {
-	  "client": [
-		"wp3.mixin.TitleScreenMixin"
-	  ]
-	},
+	"mixins": [
+	  "wp3.mixins.json"
+	],
 	"depends": {
 	  "fabricloader": ">=0.14.0",
 	  "minecraft": "1.20.4"

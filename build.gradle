@@ -38,12 +38,12 @@ fabricApi {
 
 dependencies {
 	// To change the versions see the gradle.properties file
-	minecraft "com.mojang:minecraft:${project.minecraft_version}"
-	mappings loom.officialMojangMappings()
-	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+	minecraft "com.mojang:minecraft:1.19.4"
+	mappings "net.fabricmc:yarn:1.19.4+build.2:v2"
+	modImplementation "net.fabricmc:fabric-loader:0.14.19"
 
 	// Fabric API. This is technically optional, but you probably want it anyway.
-	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+	modImplementation "net.fabricmc.fabric-api:fabric-api:0.76.0+1.19.4"
 	
 }
 
@@ -51,7 +51,7 @@ processResources {
 	inputs.property "version", project.version
 
 	filesMatching("fabric.mod.json") {
-		expand "version": project.version
+			expand "version": project.version
 	}
 }
 
