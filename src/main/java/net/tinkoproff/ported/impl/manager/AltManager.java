@@ -9,7 +9,7 @@ import com.mojang.authlib.yggdrasil.YggdrasilUserAuthentication;
 import net.tinkoproff.ported.WurstPlus;
 import net.tinkoproff.ported.impl.util.elements.Alt;
 import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.session.Session;
+import net.minecraft.client.util.Session;
 
 import javax.net.ssl.HttpsURLConnection;
 import java.io.BufferedReader;
