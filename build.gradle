@@ -12,7 +12,8 @@ base {
 
 repositories {
 	maven { url "https://maven.fabricmc.net/" }
-	maven { url "https://maven.minecraft.net/" }
+	maven { url "https://repo.spongepowered.org/repository/maven-public/" }
+	mavenCentral()
 }
 
 loom {
@@ -42,8 +43,9 @@ dependencies {
 	// Fabric API. This is technically optional, but you probably want it anyway.
 	modImplementation "net.fabricmc.fabric-api:fabric-api:0.76.0+1.19.4"
 	
-	// Mixin için gerekli
-	annotationProcessor "org.spongepowered:mixin:0.8.5:processor"
+	// Mixin için doğru bağımlılık
+	annotationProcessor "org.spongepowered:mixin:0.8.5"
+	include "org.spongepowered:mixin:0.8.5"
 }
 
 processResources {
