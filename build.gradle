@@ -26,6 +26,10 @@ dependencies {
 	// Mixin
 	annotationProcessor "org.spongepowered:mixin:0.8.5"
 	include "org.spongepowered:mixin:0.8.5"
+	
+	// GSON
+	implementation 'com.google.code.gson:gson:2.10.1'
+	include 'com.google.code.gson:gson:2.10.1'
 }
 
 processResources {
