@@ -1,18 +1,20 @@
 package net.tinkoproff.ported.mixin;
 
+import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.screen.TitleScreen;
 import net.minecraft.client.util.math.MatrixStack;
-import net.minecraft.client.MinecraftClient;
+import net.minecraft.text.Text;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 @Mixin(TitleScreen.class)
-public class TitleScreenMixin {
-    private static final Logger LOGGER = LoggerFactory.getLogger("WurstPlus");
+public class TitleScreenMixin extends Screen {
+    
+    protected TitleScreenMixin(Text title) {
+        super(title);
+    }
 
     @Inject(method = "render", at = @At("TAIL"))
     private void renderCustomText(MatrixStack matrices, int mouseX, int mouseY, float delta, CallbackInfo info) {
