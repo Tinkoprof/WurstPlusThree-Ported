@@ -9,6 +9,7 @@
     ],
 	"contact": {},
 	"license": "MIT",
+	"icon": "assets/discordrpcmod/icon.png",
 	"environment": "client",
 	"entrypoints": {
 	  "client": [
