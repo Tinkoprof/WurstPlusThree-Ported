@@ -9,8 +9,8 @@ public class RPC {
 
     public static void startRPC() {
         DiscordEventHandlers eventHandlers = new DiscordEventHandlers.Builder()
-            .setDisconnectedCallback((errorCode, message) -> 
-                System.out.println("Discord RPC disconnected, error: " + errorCode + ", message: " + message))
+            .setDisconnectedCallback((var1, var2) -> System.out.println("Discord RPC bağlantısı kesildi"))
+            .setReadyCallback((user) -> System.out.println("Discord RPC hazır"))
             .build();
 
         String discordID = "838078740344471623";
